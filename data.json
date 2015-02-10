@@ -6,25 +6,26 @@
             "title": "What is Stephanie Stamm's cat's name?",
             "text": "We're talking about her current cat. Not any past or future cat.",
             "img": null,
-            "embeddedContent": null,
+            "embeddedContent": "<strong>aaaaangry</strong>",
             "answers": [
                 {
-                    "text": "Milo",
+                    "title": "Milo",
                     "img": null,
                     "correct": false
                 },
                 {
-                    "text": "Katty",
+                    "title": "Katty",
                     "img": null,
                     "correct": false
                 },
                 {
-                    "text": "Dada",
+                    "title": "Dada",
                     "img": null,
-                    "correct": true
+                    "correct": true,
+					"text": "It's true! That's her name!"
                 },
                 {
-                    "text": "Leonardo",
+                    "title": "Leonardo",
                     "img": null,
                     "correct": false
                 }
@@ -37,22 +38,22 @@
             "embeddedContent": null,
             "answers": [
                 {
-                    "text": "Frankenfurter",
+                    "title": "Frankenfurter",
                     "img": "http://www.patsusmilch.com/wp-content/uploads/2014/11/600px-orange-cat.jpg",
                     "correct": false
                 },
                 {
-                    "text": "Nellie",
+                    "title": "Nellie",
                     "img": "http://www.hdwallpaperscool.com/wp-content/uploads/2014/04/Black-cat-marvelous-hd-wallpaper.jpg",
                     "correct": true
                 },
                 {
-                    "text": "Wonkette",
+                    "title": "Wonkette",
                     "img": "http://www.catster.com/files/king-cat_0.jpg",
                     "correct": false
                 },
                 {
-                    "text": "Leonardo",
+                    "title": "Leonardo",
                     "img": "http://img1.wikia.nocookie.net/__cb20130404145553/darksouls/images/5/5b/Angry_Cat_Face_Wallpaper.jpg",
                     "correct": false
                 }
@@ -60,27 +61,27 @@
         },
         {
             "title": "How many times does Bill Joel say \"fire\" in this video?",
-            "text": "OK, she's really <a href='http://www.twitter.com/margaretreports' target='_blank'>Margaret Harding's</a> cat.",
-            "img": "http://www.wallpapersdb.org/wallpapers/cats/cats_playing_1920x1440.jpg",
+            "text": null,
+            "img": null,
             "embeddedContent": "<iframe width=\"420\" height=\"315\" src=\"https://www.youtube.com/embed/eFTLKWw542g\" frameborder=\"0\" allowfullscreen></iframe>",
             "answers": [
                 {
-                    "text": "20",
+                    "title": "20",
                     "img": null,
                     "correct": true
                 },
                 {
-                    "text": "4",
+                    "title": "4",
                     "img": null,
                     "correct": false
                 },
                 {
-                    "text": "2",
+                    "title": "2",
                     "img": null,
                     "correct": false
                 },
                 {
-                    "text": "10",
+                    "title": "10",
                     "img": null,
                     "correct": false
                 }
