@@ -1,0 +1,90 @@
+{
+    "title": "How well do you know the cats of the National Journal newsroom?",
+    "text": "So many cats to choose from! Such hard decisions. Take your best shot at matching cats to their owners. Meow! (Also, there's a random Billy Joel song at the end.)",
+    "questions": [
+        {
+            "title": "What is Stephanie Stamm's cat's name?",
+            "text": "We're talking about her current cat. Not any past or future cat.",
+            "img": null,
+            "embeddedContent": null,
+            "answers": [
+                {
+                    "text": "Milo",
+                    "img": null,
+                    "correct": false
+                },
+                {
+                    "text": "Katty",
+                    "img": null,
+                    "correct": false
+                },
+                {
+                    "text": "Dada",
+                    "img": null,
+                    "correct": true
+                },
+                {
+                    "text": "Leonardo",
+                    "img": null,
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "title": "What is Andrew McGill's cat's name?",
+            "text": "OK, she's really <a href='http://www.twitter.com/margaretreports' target='_blank'>Margaret Harding's</a> cat.",
+            "img": "http://www.wallpapersdb.org/wallpapers/cats/cats_playing_1920x1440.jpg",
+            "embeddedContent": null,
+            "answers": [
+                {
+                    "text": "Frankenfurter",
+                    "img": "http://www.patsusmilch.com/wp-content/uploads/2014/11/600px-orange-cat.jpg",
+                    "correct": false
+                },
+                {
+                    "text": "Nellie",
+                    "img": "http://www.hdwallpaperscool.com/wp-content/uploads/2014/04/Black-cat-marvelous-hd-wallpaper.jpg",
+                    "correct": true
+                },
+                {
+                    "text": "Wonkette",
+                    "img": "http://www.catster.com/files/king-cat_0.jpg",
+                    "correct": false
+                },
+                {
+                    "text": "Leonardo",
+                    "img": "http://img1.wikia.nocookie.net/__cb20130404145553/darksouls/images/5/5b/Angry_Cat_Face_Wallpaper.jpg",
+                    "correct": false
+                }
+            ]
+        },
+        {
+            "title": "How many times does Bill Joel say \"fire\" in this video?",
+            "text": "OK, she's really <a href='http://www.twitter.com/margaretreports' target='_blank'>Margaret Harding's</a> cat.",
+            "img": "http://www.wallpapersdb.org/wallpapers/cats/cats_playing_1920x1440.jpg",
+            "embeddedContent": "<iframe width=\"420\" height=\"315\" src=\"https://www.youtube.com/embed/eFTLKWw542g\" frameborder=\"0\" allowfullscreen></iframe>",
+            "answers": [
+                {
+                    "text": "20",
+                    "img": null,
+                    "correct": true
+                },
+                {
+                    "text": "4",
+                    "img": null,
+                    "correct": false
+                },
+                {
+                    "text": "2",
+                    "img": null,
+                    "correct": false
+                },
+                {
+                    "text": "10",
+                    "img": null,
+                    "correct": false
+                }
+            ]
+        }
+    ]
+}
