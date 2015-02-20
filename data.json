@@ -6,28 +6,35 @@
             "title": "What is Stephanie Stamm's cat's name?",
             "text": "We're talking about her current cat. Not any past or future cat.",
             "img": null,
-            "embeddedContent": "<strong>aaaaangry</strong>",
+            "embeddedContent": "",
             "answers": [
                 {
                     "title": "Milo",
                     "img": null,
-                    "correct": false
+                    "correct": false,
+                    "messageTitle": "Nope.",
+                    "message": "Hilarious. You think Steph would name her cat after Milo of Croton, the famous Greek athlete? Funny joke."
                 },
                 {
                     "title": "Katty",
                     "img": null,
-                    "correct": false
+                    "messageTitle": ".....No.",
+                    "correct": false,
+                    "message": "WTF is Katty?"
                 },
                 {
                     "title": "Dada",
                     "img": null,
                     "correct": true,
-					"text": "It's true! That's her name!"
+                    "messageTitle": "Yes!",
+                    "message": "It's true! That's her name!"
                 },
                 {
                     "title": "Leonardo",
                     "img": null,
-                    "correct": false
+                    "correct": false,
+                    "messageTitle": "Good guess, but no.",
+                    "message": "Steph does love art. But Leonardo da Vinci is not the inspiration for this."
                 }
             ]
         },
@@ -40,22 +47,30 @@
                 {
                     "title": "Frankenfurter",
                     "img": "http://www.patsusmilch.com/wp-content/uploads/2014/11/600px-orange-cat.jpg",
-                    "correct": false
+                    "correct": false,
+                    "messageTitle": "Nah.",
+                    "message": "Isn't that the name of the guy from 'Rocky Horror Picture Show'?"
                 },
                 {
                     "title": "Nellie",
                     "img": "http://www.hdwallpaperscool.com/wp-content/uploads/2014/04/Black-cat-marvelous-hd-wallpaper.jpg",
-                    "correct": true
+                    "correct": true,
+                    "messageTitle": "Yes!",
+                    "message": "Nellie is her name, and we love her."
                 },
                 {
                     "title": "Wonkette",
                     "img": "http://www.catster.com/files/king-cat_0.jpg",
-                    "correct": false
+                    "correct": false,
+                    "messageTitle": "Ew.",
+                    "message": "That's a blog."
                 },
                 {
                     "title": "Leonardo",
                     "img": "http://img1.wikia.nocookie.net/__cb20130404145553/darksouls/images/5/5b/Angry_Cat_Face_Wallpaper.jpg",
-                    "correct": false
+                    "correct": false,
+                    "messageTitle": "No!",
+                    "message": "Quit with the Leonardo's!"
                 }
             ]
         },
@@ -68,22 +83,30 @@
                 {
                     "title": "20",
                     "img": null,
-                    "correct": true
+                    "correct": true,
+                    "messageTitle": "Maybe?",
+                    "message": "I mean, this is my best guess."
                 },
                 {
                     "title": "4",
                     "img": null,
-                    "correct": false
+                    "correct": false,
+                    "messageTitle": "Way too few.",
+                    "message": "But who knows?"
                 },
                 {
                     "title": "2",
                     "img": null,
-                    "correct": false
+                    "correct": false,
+                    "messageTitle": "Oh, come on.",
+                    "message": "You're not even trying."
                 },
                 {
                     "title": "10",
                     "img": null,
-                    "correct": false
+                    "correct": false,
+                    "messageTitle": "Probably not.",
+                    "message": "Honestly, your guess is as good as mine."
                 }
             ]
         }
