@@ -1,6 +1,9 @@
 {
     "title": "How well do you know the cats of the National Journal newsroom?",
     "text": "So many cats to choose from! Such hard decisions. Take your best shot at matching cats to their owners. Meow! (Also, there's a random Billy Joel song at the end.)",
+	"bronzeResponse": "So you don't know cats very well. Big deal!",
+	"silverResponse": "You know your Billy Joel!",
+	"goldResponse": "I'm so so so so proud of you.",
     "questions": [
         {
             "title": "What is Stephanie Stamm's cat's name?",

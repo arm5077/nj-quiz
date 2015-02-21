@@ -5,6 +5,9 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title></title>
 	
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="fontawesome/css/font-awesome.min.css">
+	
 	<!-- Angular -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.11/angular.min.js"></script>
 	
@@ -20,23 +23,38 @@
 	</div>
 	
 	<ul class = "quiz">
-		<li ng-repeat="question in data.questions">
+		<li ng-repeat="question in data.questions")>
 			<h1>{{question.title}}</h1>
 			<img src="{{question.img}}" ng-show="question.img" />
 			<h2 ng-bind-html="renderHTML(question.text)"></h2>
 			<div class="embed" ng-bind-html="renderHTML(question.embeddedContent)"></div>
 			
-			<ul class = "answers">
-				<li ng-repeat="answer in question.answers" ng-class="{image: answer.img != null }" ng-click("evaluateAnswer(answer)")>
+			<ul class = "answers"  ng-class="{answered: question.answered}">
+				<li ng-repeat="answer in question.answers" ng-class="{image: answer.img != null, correct: question.answered && answer.correct, incorrect: question.answered && !answer.correct, selected: question.answered && answer.picked }" ng-click="evaluateAnswer(answer, question)">
 					<h3>{{answer.title}}</h3>
 					<div image class = "image" ng-style="{'background-image':'url(' + answer.img + ')'}" ng-show="answer.img">
 					<h4 ng-show="answer.text && question.answered">{{answer.text}}</h4>
 				</li>
 			</ul>
+			<h2 class="response" ng-show="question.response" ng-bind-html="renderHTML(question.response)"></h2>
 		</li>
 	</ul>
 	
-	
+	<table class = "total" ng-class="{gold: score/total > .67, bronze: score/total < .33}">
+		<tr>
+			<td>
+				<span class="fa-stack fa-lg">
+				  <i class="fa fa-circle fa-stack-2x"></i>
+				  <i class="fa fa-trophy fa-stack-1x fa-inverse"></i>
+				</span>
+			</td>
+			<td>
+				<h1 ng-show="score/total > .66">{{ data.goldResponse }}</h1>
+				<h2 ng-show="score/total <= .66 && score/total >= .33">{{ data.silverResponse }}<h2>
+				<h2 ng-show="score/total < .33">{{ data.bronzeResponse }}</h2>
+				You got {{score}} out of {{total}}.
+			</td>
+	</div>
 	
 </body>
 
