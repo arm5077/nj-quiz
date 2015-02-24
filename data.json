@@ -4,6 +4,7 @@
 	"bronzeResponse": "So you don't know cats very well. Big deal!",
 	"silverResponse": "You know your Billy Joel!",
 	"goldResponse": "I'm so so so so proud of you.",
+	"url": "http://www.aol.com",
     "questions": [
         {
             "title": "What is Stephanie Stamm's cat's name?",
@@ -42,38 +43,74 @@
             ]
         },
         {
-            "title": "What is Andrew McGill's cat's name?",
-            "text": "OK, she's really <a href='http://www.twitter.com/margaretreports' target='_blank'>Margaret Harding's</a> cat.",
+            "title": "Why are these cats fighting?",
+            "text": "",
             "img": "http://www.wallpapersdb.org/wallpapers/cats/cats_playing_1920x1440.jpg",
             "embeddedContent": null,
             "answers": [
                 {
-                    "title": "Frankenfurter",
+                    "title": "They're not! They love each other!",
+                    "img": null,
+                    "correct": false,
+                    "messageTitle": "Wrong.",
+                    "message": "These cats hate each other."
+                },
+                {
+                    "title": "They're just young. It's a misunderstanding.",
+                    "img": null,
+                    "correct": false,
+                    "messageTitle": "You're wrong.",
+                    "message": "And an enabler."
+                },
+                {
+                    "title": "Just because.",
+                    "img": null,
+                    "correct": true,
+                    "messageTitle": "Ding ding ding!",
+                    "message": "Cats do things just because."
+                },
+                {
+                    "title": "They're siblings.",
+                    "img": null,
+                    "correct": false,
+                    "messageTitle": "Nice try.",
+                    "message": "These stock-art cats AREN'T siblings."
+                }
+            ]
+        },
+        {
+            "title": "Which cat is Andrew McGill's cat?",
+            "text": "OK, she's really <a href='http://www.twitter.com/margaretreports' target='_blank'>Margaret Harding's</a> cat.",
+            "img": "",
+            "embeddedContent": null,
+            "answers": [
+                {
+                    "title": "",
                     "img": "http://www.patsusmilch.com/wp-content/uploads/2014/11/600px-orange-cat.jpg",
                     "correct": false,
                     "messageTitle": "Nah.",
-                    "message": "Isn't that the name of the guy from 'Rocky Horror Picture Show'?"
+                    "message": "That cat is trying too hard."
                 },
                 {
-                    "title": "Nellie",
+                    "title": "",
                     "img": "http://www.hdwallpaperscool.com/wp-content/uploads/2014/04/Black-cat-marvelous-hd-wallpaper.jpg",
                     "correct": true,
                     "messageTitle": "Yes!",
                     "message": "Nellie is her name, and we love her."
                 },
                 {
-                    "title": "Wonkette",
+                    "title": "",
                     "img": "http://www.catster.com/files/king-cat_0.jpg",
                     "correct": false,
                     "messageTitle": "Ew.",
-                    "message": "That's a blog."
+                    "message": "He would never put a hat on a cat."
                 },
                 {
-                    "title": "Leonardo",
+                    "title": "",
                     "img": "http://img1.wikia.nocookie.net/__cb20130404145553/darksouls/images/5/5b/Angry_Cat_Face_Wallpaper.jpg",
                     "correct": false,
-                    "messageTitle": "No!",
-                    "message": "Quit with the Leonardo's!"
+                    "messageTitle": "GROWWWWWLLL",
+                    "message": "HISSSSSSSS"
                 }
             ]
         },

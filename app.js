@@ -1,10 +1,14 @@
 app = angular.module("quizApp", []);
+
 app.controller("quizController", ["$scope", "$http", "$sce", function($scope, $http, $sce){
 	
 	$scope.renderHTML = function(text){ return $sce.trustAsHtml(text); };
 	$scope.score = 0;
 	$scope.total = 0;
-	
+
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+	 	$scope.mobile = true;
+	}
 	
 	// Get quiz data
 	$http.get("data.json")
@@ -14,18 +18,17 @@ app.controller("quizController", ["$scope", "$http", "$sce", function($scope, $h
 		.success(function(response){
 			
 			$scope.data = response;
-			$scope.total = $scope.data.questions.length;
 			
 			
 		});
 	
-	$scope.evaluateAnswer = function(answer, question){
+	$scope.evaluateAnswer = function(answer, question, index){
 		if( !question.answered ){
 			question.answered = true;
 			answer.picked = true;
 			if( answer.correct == true ) {
 				answer.right = true;
-				question.correct = false;
+				question.correct = true;
 				$scope.score++;
 			}
 			else {
@@ -33,6 +36,7 @@ app.controller("quizController", ["$scope", "$http", "$sce", function($scope, $h
 				question.correct = false;
 			}
 			question.response = "<strong>" + answer.messageTitle + "</strong> " + answer.message;
+			$scope.total ++;
 		}
 	
 	
@@ -53,3 +57,33 @@ app.directive('image', function() {
       }
     }
 });
+
+app.directive('waypoint', function(){
+	return {
+		link: function(scope, element, attributes){
+
+			var waypoint = new Waypoint({
+				element: element[0],
+				handler: function(direction) {
+					if( direction == "down") 
+		    			scope.$parent.current = parseInt(attributes.index);						
+					else 
+						scope.$parent.current = parseInt(attributes.index) - 1;						
+					scope.$parent.$apply();
+		  		},
+				offset:"20%"
+			});
+
+			setInterval(function(){
+				Waypoint.refreshAll();
+			},1000);
+
+
+
+		}
+	}
+
+})
+
+
+
