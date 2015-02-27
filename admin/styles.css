@@ -1,0 +1,109 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700);
+
+body {
+	font-family: "Open Sans", Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+	font-weight:100;
+}
+
+h1 {
+	font-weight:100;
+	font-size: 40pt;
+	margin-bottom:25px;
+}
+
+.center {
+	margin-left: auto;
+	margin-right:auto;
+	text-align:center;
+}
+
+input {
+	font-weight:100;
+}
+
+input.simple {
+	font-weight:100;
+	border:0;
+	border-bottom:1px dotted black;
+	font-size:16pt;
+	padding-bottom: 5px;
+	display:inline-block;
+}
+
+	input:focus {
+		outline-width:0;
+	}
+
+.btn, .btn.disabled:hover {
+	background-color:White;
+	padding: 5px 20px;
+	font-size: 12pt;
+	text-align:Center;
+	border:1px solid #ccc;
+	margin: 0px 10px;
+	border-radius:5px;
+	color: rgba(0,0,0,.7);
+	opacity:.8;
+}
+
+	.btn:hover {
+		background-color: #267EC1;
+		border: 1px solid #267EC1;
+		opacity: 1;
+		cursor:pointer;
+		color:white;
+	}
+	
+	.btn.disabled, .btn.disabled:hover {
+		opacity:.5;
+		cursor:default;
+	}
+
+.section {
+	margin-bottom: 50px;
+	padding-bottom:50px;
+	border-bottom: 1px solid lightgray;
+}
+
+	.section:last-child {
+		border-bottom:0;
+		margin-bottom:0;
+	}
+	
+.inputCollection.shaded {
+	background-color: #efefef;
+	padding: 20px;
+	width:40%;
+	margin:auto;
+	border-radius:5px;
+}
+	
+	.inputCollection.shaded label {
+		color:#777;
+		font-size:12pt;
+		font-weight:600;
+	}
+
+	.inputCollection.shaded input[type='text']{
+		border: 0;
+		background-color: #ddd;
+		padding: 5px;
+		font-size: 16pt;
+		width:98%;
+		margin-bottom:15px;
+	}
+
+label {
+	display:block;
+	color:#999;
+	font-size:10pt;
+	font-weight:100;
+	
+}
+
+.insertQuestion input[type='text'] {
+	background-color: #ddd;
+}
