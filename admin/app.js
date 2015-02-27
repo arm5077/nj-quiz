@@ -8,15 +8,22 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 		if(!question.answers) question.answers = [];
 		question.answers.push(angular.copy(answer));
 		
-		answer = {};
+		$scope.emptyObject(answer);
 	
 	};
 	
 	$scope.addQuestion = function(question) {
 		$scope.data.questions.push(angular.copy(question));
 		
+		$scope.emptyObject(question);
+		
 	}
 	
+	$scope.emptyObject = function(object){
+		for(var p in object)
+		    if(object.hasOwnProperty(p))
+		        object[p] = '';
+	}
 	
 	$scope.handleSlug = function(){
 		if( $scope.slug ){
