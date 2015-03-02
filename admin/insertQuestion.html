@@ -1,0 +1,86 @@
+<div class = "insertQuestion">
+	<div class = "inputCollection shaded">
+		
+		<div class="inputBlock">
+			<label>Question title</label>
+			<input type="text" ng-model="question.title" />
+		</div>
+
+		<div class="inputBlock">				
+			<label>Question text</label>
+			<input type="text" ng-model="question.text" />
+		</div>
+
+		<div class="inputBlock">				
+			<label>Image URL (if you want an overall image)</label>
+			<input type="text" ng-model="temp.url" />
+		</div>
+
+		<div class = "answerBlock" ng-show="question.answers">
+			<h3>Current answers</h3>
+			<form class = "answer" ng-repeat = "answer in question.answers">
+				<div class="inputBlock">				
+					<label>Answer title</label>
+					<input type="text" ng-model="answer.title" />
+				</div>
+
+				<div class="inputBlock">				
+					<label>Answer image (if any)</label>
+					<input type="text" ng-model="answer.img" />
+				</div>
+
+				<div class="inputBlock">
+					<label>Correct or incorrect?</label>
+					<input type="radio" ng-model="answer.correct" value = "true"/> Correct
+					<input type="radio" ng-model="answer.correct" value = "false"/> Incorrect
+				</div>
+
+				<div class="inputBlock">				
+					<label>Message title to display after answer</label>
+					<input type="text" ng-model="answer.messageTitle" />
+				</div>
+
+				<div class="inputBlock">				
+					<label>Message text to display after answer</label>
+					<input type="text" ng-model="answer.message" />
+				</div>
+
+			</form>
+		</div>
+	
+		<div class = "newAnswerBlock">
+			<h3>Add a new answer</h3>
+			<div class="inputBlock">				
+				<label>Answer title</label>
+				<input type="text" ng-model="temp.title" />
+			</div>
+
+			<div class="inputBlock">				
+				<label>Answer image (if any)</label>
+				<input type="text" ng-model="temp.img" />
+			</div>
+
+			<div class="inputBlock">
+				<label>Correct or incorrect?</label>
+				<input type="radio" ng-model="temp.correct" value = "true"/> Correct
+				<input type="radio" ng-model="temp.correct" value = "false"/> Incorrect
+			</div>
+		
+			<div class="inputBlock">				
+				<label>Message title to display after answer</label>
+				<input type="text" ng-model="temp.messageTitle" />
+			</div>
+		
+			<div class="inputBlock">				
+				<label>Message text to display after answer</label>
+				<input type="text" ng-model="temp.message" />
+			</div>
+
+			<div class="btn" ng-class="" ng-click="addAnswer(temp, question)" >Add answer</div>
+		
+		</div>
+	
+		<div class="btn big" ng-class="" ng-click="addQuestion(question)" >Add question</div>
+	
+	</div>
+</div>

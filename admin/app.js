@@ -5,6 +5,7 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 	$scope.temp = {};
 	
 	$scope.addAnswer = function(answer, question){
+		console.log(question);
 		if(!question.answers) question.answers = [];
 		question.answers.push(angular.copy(answer));
 		
@@ -28,7 +29,6 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 	$scope.handleSlug = function(){
 		if( $scope.slug ){
 			$http.get('../slug/' + $scope.slug).success(function(data, status, headers, config){
-				
 				if( data.status == "Quiz created!") {
 					console.log("No quiz data -- initializing defaults");
 					$scope.data = {
@@ -41,8 +41,9 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 					    "questions": []
 					};
 				} else {
-					console.log("Pull data from existing quiz");
-					$scope.data = data;
+					console.log("Pull data from existing quiz!");
+					$scope.data = data.data;
+					console.log(data);
 				}
 				
 			})
@@ -52,7 +53,31 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 			})
 		}
 		
+	};
+
+	$scope.submitQuiz = function(){
+		console.log("submitting!");
+		$http.post('/slug/' + $scope.slug, {json: JSON.stringify($scope.data)})
+			.success(function(data, status, headers, config){
+				
+			})
+			.error(function(data, status, headers, config){
+				console.log("SO MUCH ERROR: " + data);
+			})
 	}
 
 
 }]);
+
+app.filter('anyDirtyFields', function () {
+	return function(form) {
+		for(var prop in form) {
+      		if(form.hasOwnProperty(prop)) {
+        		if(form[prop].$dirty) {
+          			return true; 
+        		}
+      		}
+    	}
+    return false;
+  };
+});

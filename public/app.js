@@ -1,5 +1,6 @@
 app = angular.module("quizApp", []);
 
+
 app.controller("quizController", ["$scope", "$http", "$sce", function($scope, $http, $sce){
 	
 	$scope.renderHTML = function(text){ return $sce.trustAsHtml(text); };
@@ -11,7 +12,7 @@ app.controller("quizController", ["$scope", "$http", "$sce", function($scope, $h
 	}
 	
 	// Get quiz data
-	$http.get("data.json")
+	$http.get("../data/" + getParameterByName("quizid") + ".json")
 		.error(function(error){
 			console.log("Hit an error! Here it is: " + error);
 		})
@@ -83,7 +84,12 @@ app.directive('waypoint', function(){
 		}
 	}
 
-})
+});
 
-
-
+// Taken with thanks from http://stackoverflow.com/questions/901115/how-can-i-get-query-string-values-in-javascript
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
