@@ -12,7 +12,7 @@ app.controller("quizController", ["$scope", "$http", "$sce", function($scope, $h
 	}
 	
 	// Get quiz data
-	$http.get("../data/" + getParameterByName("quizid") + ".json")
+	$http.get("../data/" + getParameterByName("id") + ".json")
 		.error(function(error){
 			console.log("Hit an error! Here it is: " + error);
 		})
