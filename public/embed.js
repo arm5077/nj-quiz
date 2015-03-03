@@ -2,7 +2,7 @@
 
 console.log("Embedded scripts running ...");
 
-var pymParent = new pym.Parent('pym', document.getElementById('countdown').className, {});
+var pymParent = new pym.Parent('pym', document.getElementById('pym').className, {});
 
 resize();
 $(window).resize(resize);
