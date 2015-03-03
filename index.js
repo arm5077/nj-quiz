@@ -1,14 +1,15 @@
 express = require("express");
 var app = express();
 var fs = require("fs");
-var bodyParser = require('body-parser')
+var bodyParser = require('body-parser');
+var AWS = require('aws-sdk');
 
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
-
+// Start up server
 var port = process.env.PORT || 3000;
 app.listen(port, function(){
 	console.log("We're live at port " + port + ".");
@@ -23,6 +24,7 @@ app.use("/admin", express.static(__dirname + '/admin'));
 // Set up static page (data)
 app.use("/data", express.static(__dirname + '/data'));
 
+// Accept GET request for quiz slugs and return data
 app.get("/slug/:slug", function(request, response){
 	// Try to read file. If it's not there, create it.
 	fs.readFile(__dirname + "/data/" + request.params.slug + ".json", {flag: "a+"}, function(err, data){
@@ -36,10 +38,19 @@ app.get("/slug/:slug", function(request, response){
 	});
 });
 
+// Accept POST requests to add or edit quizzes
 app.post("/slug/:slug", function(request, response){
-	// Try to read file. If it's not there, create it.
-	fs.writeFile(__dirname + "/data/" + request.params.slug + ".json", request.body.json, {flag: "w+"}, function(err, data){
-		if(err) throw err;
-		console.log("Saved " + request.params.slug + ".json!");
+	
+	var s3 = new AWS.S3({params: {Bucket: 'nationaljournal', Key: 'quizzes'}});
+	s3.upload({
+		Key: "quizzes/data/" + request.params.slug + ".json",
+		Body: request.body.json,
+		ACL: "public-read",
+	}, function(resp){
+		console.log(resp);
 	});
+	
+	
+	
+
 });

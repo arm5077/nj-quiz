@@ -12,15 +12,12 @@ app.controller("quizController", ["$scope", "$http", "$sce", function($scope, $h
 	}
 	
 	// Get quiz data
-	$http.get("../data/" + getParameterByName("id") + ".json")
+	$http.get("https://s3-us-west-2.amazonaws.com/nationaljournal/quizzes/data/" + getParameterByName("id") + ".json")
 		.error(function(error){
 			console.log("Hit an error! Here it is: " + error);
 		})
 		.success(function(response){
-			
 			$scope.data = response;
-			
-			
 		});
 	
 	$scope.evaluateAnswer = function(answer, question, index){
