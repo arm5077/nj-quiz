@@ -3,7 +3,7 @@
 
 <head>
 	
-	<title>Quizbuilder | Making news quizes easy</title>
+	<title>nj-quiz | Making news quizzes easy</title>
 	
 	<!-- Angular.js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
@@ -32,8 +32,9 @@
 	</div>
 	
 	<div class = "container">
-		<div class = "section">
+		<div class = "section" id="slug">
 			<h1 class = "center">What's the slug for this quiz?</h1>
+			<h2 class="center">You can make one up, if you want.</h2>
 			<div class = "inputBlock center">
 				<input type="text" ng-model="slug" class="simple center" />
 				<span class="btn" ng-class="{disabled: !slug}" ng-click="handleSlug()" >Go</span>
@@ -58,7 +59,11 @@
 					<label>Nstein story URL (yes, you gotta make this first!)</label>
 					<input type="text" ng-model="data.url" />
 				</div>
+			</div>
 				
+			<h3 class = "center separator">What do you want the quiz to tell people when they finish?</h3>
+			
+			<div class = "inputCollection shaded">
 				<div class="inputBlock">				
 					<label>Response for bronze-level finish</label>
 					<input type="text" ng-model="data.bronzeResponse" />
@@ -95,7 +100,11 @@
 		<div class = "section" ng-show="data" style="background-color: #9DBFB9;">
 			<h2 class="center">And let's add some questions!</h2>
 			
-			<div ng-include = "'insertQuestion.html'"></div>
+			<div class = "inputCollection shaded" ng-show="newQuestion==false">
+				<div class="btn big" ng-class="" ng-click="newQuestion=true" >Add question</div>
+			</div>
+			
+			<div ng-include = "'insertQuestion.html'" ng-show="newQuestion == true"></div>
 		</div>
 		
 		<div class = "section" ng-show="data">

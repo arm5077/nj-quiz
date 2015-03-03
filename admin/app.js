@@ -6,21 +6,35 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 	$scope.host = window.location.host;
 	$scope.success = false;
 	$scope.error = false;
+	$scope.newQuestion = false;
+	$scope.newAnswer = false;
 	
 	
 	$scope.addAnswer = function(answer, question){
-		console.log(question);
+		
 		if(!question.answers) question.answers = [];
 		question.answers.push(angular.copy(answer));
-		
+
 		$scope.emptyObject(answer);
+			
+		
 	
 	};
 	
 	$scope.addQuestion = function(question) {
-		$scope.data.questions.push(angular.copy(question));
+		isThereTruth = false;
+		question.answers.forEach(function(answer){
+			if( answer.correct ) isThereTruth = true;
+		});
 		
-		$scope.emptyObject(question);
+		if( isThereTruth ){
+			$scope.data.questions.push(angular.copy(question));
+			$scope.emptyObject(question);
+			$scope.newQuestion = false;
+		}
+		else {
+			alert("You haven't selected a correct answer!")
+		}
 		
 	}
 	

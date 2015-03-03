@@ -3,7 +3,7 @@
 		
 		<div class="inputBlock">
 			<label>Question title</label>
-			<input type="text" ng-model="question.title" />
+			<input type="text" ng-model="question.title" class = "title" />
 		</div>
 
 		<div class="inputBlock">				
@@ -13,7 +13,7 @@
 
 		<div class="inputBlock">				
 			<label>Image URL (if you want an overall image)</label>
-			<input type="text" ng-model="temp.url" />
+			<input type="text" ng-model="question.img" />
 		</div>
 
 		<div class = "answerBlock" ng-show="question.answers">
@@ -48,7 +48,9 @@
 			</form>
 		</div>
 	
-		<div class = "newAnswerBlock">
+		<div class="btn" ng-class="" ng-click="newAnswer = true" ng-show="newAnswer==false && question.title" style="margin-bottom:10px" >Add answer</div>
+	
+		<div class = "newAnswerBlock" ng-show="newAnswer == true">
 			<h3>Add a new answer</h3>
 			<div class="inputBlock">				
 				<label>Answer title</label>
@@ -62,8 +64,8 @@
 
 			<div class="inputBlock">
 				<label>Correct or incorrect?</label>
-				<input type="radio" ng-model="temp.correct" value = "true"/> Correct
-				<input type="radio" ng-model="temp.correct" value = "false"/> Incorrect
+				<input type="radio" ng-model="temp.correct" ng-value = "true"/> Correct
+				<input type="radio" ng-model="temp.correct" ng-value = "false"/> Incorrect
 			</div>
 		
 			<div class="inputBlock">				
@@ -76,11 +78,16 @@
 				<input type="text" ng-model="temp.message" />
 			</div>
 
-			<div class="btn" ng-class="" ng-click="addAnswer(temp, question)" >Add answer</div>
+			<div class="btn" ng-class="" ng-hide="!temp.title || temp.correct == null || !temp.messageTitle || !temp.message" ng-click="addAnswer(temp, question); newAnswer=false">Save answer</div>
+			<div class="btn disabled" ng-class="" ng-show="!temp.title || temp.correct == null || !temp.messageTitle || !temp.message">Save answer</div>
+			<!-- The above is super inelegant, fix when my brain is working again -->
 		
 		</div>
 	
-		<div class="btn big" ng-class="" ng-click="addQuestion(question)" >Add question</div>
+			<div class="btn big" ng-class="" ng-click="addQuestion(question)" ng-show="question.answers.length > 0" >Save question</div>
 	
 	</div>
+	
+
+	
 </div>

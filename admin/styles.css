@@ -11,7 +11,20 @@ h1, h2, h3, h4, h5 {
 h1 {
 	font-weight:100;
 	font-size: 40pt;
-	margin-bottom:25px;
+	margin-bottom:10px;
+}
+
+h2 {
+	margin: 30px 0px 15px;
+}
+
+	#slug h2 {
+		margin-top:0;
+		margin-bottom: 50px;
+	}
+
+h3.separator {
+	margin: 30px 0px 15px;
 }
 
 h3 {
@@ -148,6 +161,11 @@ input.simple {
 		font-size: 16pt;
 		width:98%;
 	}
+	
+		.inputCollection input[type='text'].title {
+			font-size: 28pt;
+		}
+		
 		.inputCollection.shaded input[type='text']{
 			background-color: #ddd;
 		}
