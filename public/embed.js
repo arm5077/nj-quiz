@@ -13,7 +13,8 @@ function resize(){
 		$("#pym").css({
 			"width": "90%",
 			"margin-left": "auto",
-			"margin-right": "auto"
+			"margin-right": "auto",
+			"margin-bottom": "50px"
 		});
 	}
 	else {
