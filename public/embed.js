@@ -2,20 +2,21 @@
 
 console.log("Embedded scripts running ...");
 
-var pymParent = new pym.Parent('iframe', "https://s3-us-west-2.amazonaws.com/nationaljournal/quizzes/feb-28-news-quiz/index.html", {});
+var pymParent = new pym.Parent('pym', document.getElementById('countdown').className, {});
 
 resize();
 $(window).resize(resize);
 setInterval(resize, 1000);
 
 function resize(){
-	if( $(window).width() > 1125 ){
-		$("#iframe").css({
+	if( $(window).width() > 750 ){
+		$("#pym").css({
 			"width": "90%",
+			"margin": "auto"
 		});
 	}
 	else {
-		$("#iframe").css({
+		$("#pym").css({
 			"width": "",
 			"margin-left": ""
 		});

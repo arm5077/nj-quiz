@@ -3,6 +3,10 @@ app = angular.module("quizAdminApp", []);
 app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scope, $http, $sce){
 
 	$scope.temp = {};
+	$scope.host = window.location.host;
+	$scope.success = false;
+	$scope.error = false;
+	
 	
 	$scope.addAnswer = function(answer, question){
 		console.log(question);
@@ -29,7 +33,7 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 	$scope.handleSlug = function(){
 		if( $scope.slug ){
 			$http.get('../slug/' + $scope.slug).success(function(data, status, headers, config){
-				if( data.status == "Quiz created!") {
+				if( data.status == "No quiz found!") {
 					console.log("No quiz data -- initializing defaults");
 					$scope.data = {
 						"title": "How well do you know the cats of the National Journal newsroom?",
@@ -57,8 +61,26 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 
 	$scope.submitQuiz = function(){
 		console.log("submitting!");
+		
 		$http.post('/slug/' + $scope.slug, {json: JSON.stringify($scope.data)})
 			.success(function(data, status, headers, config){
+				if( status == 201 ){
+					$scope.success = true;
+					setTimeout(function(){
+						$scope.$apply(function(){
+							$scope.success = false;
+						});
+					}, 5000); 
+				}
+				else {
+					$scope.error = true;
+					$scope.errorMessage = "Error: " + data.status;
+					setTimeout(function(){
+						$scope.$apply(function(){
+							$scope.error = false;
+						});
+					}, 5000);
+				}
 				
 			})
 			.error(function(data, status, headers, config){

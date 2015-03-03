@@ -82,9 +82,9 @@ input.simple {
 	}
 
 .section {
-	margin-bottom: 50px;
-	padding-bottom:50px;
+	padding-bottom: 50px;
 	border-bottom: 1px solid lightgray;
+	padding-top: 50px;
 }
 
 	.section:last-of-type {
@@ -98,6 +98,7 @@ input.simple {
 	width:40%;
 	margin:auto;
 	border-radius:5px;
+	min-width: 500px;
 }
 	
 	.inputCollection.shaded label {
@@ -162,11 +163,12 @@ label {
 }
 
 .accordian {
+	max-width:600px;
 	height: 25px;
 	overflow: hidden;
 	background-color: #ddd;
 	padding: 10px;
-	margin-bottom: 20px;
+	margin:0px auto 20px;
 }
 
 	.accordian.expanded {
@@ -189,3 +191,19 @@ label {
 			display: inline-block;
 
 		}
+		
+#success, #error {
+	font-weight: 600;
+	font-size: 13pt;
+	text-align: center;
+	padding: 10px;
+	margin-top: 10px;
+	color: white;
+	background-color: seagreen;
+	border-radius: 5px;
+	margin: 10px;
+}
+
+	#error {
+		background-color: darkred;
+	}

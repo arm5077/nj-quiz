@@ -3,6 +3,7 @@ var app = express();
 var fs = require("fs");
 var bodyParser = require('body-parser');
 var AWS = require('aws-sdk');
+var decoder = new (require('string_decoder').StringDecoder)('utf-8');
 
 app.use( bodyParser.json() );
 app.use(bodyParser.urlencoded({
@@ -24,18 +25,24 @@ app.use("/admin", express.static(__dirname + '/admin'));
 // Set up static page (data)
 app.use("/data", express.static(__dirname + '/data'));
 
+// Set up static page (embed library)
+app.use("/embed", express.static(__dirname + '/public/embed.js'));
+
 // Accept GET request for quiz slugs and return data
 app.get("/slug/:slug", function(request, response){
 	// Try to read file. If it's not there, create it.
-	fs.readFile(__dirname + "/data/" + request.params.slug + ".json", {flag: "a+"}, function(err, data){
-		if(err) throw err;
-		if(data.length != 0){
-			response.status(200).json({"status": "Quiz already exists!", "data": JSON.parse(data) });	
+	var s3 = new AWS.S3({params: {Bucket: 'nationaljournal', Key: 'quizzes'}});	
+	s3.getObject({
+		Key: "quizzes/data/" + request.params.slug + ".json",
+	}, function(err, data){
+		if(err){
+			response.status(200).json({"status": "No quiz found!" });
 		}
 		else {
-			response.status(200).json({"status": "Quiz created!" });
+			response.status(200).json({"status": "Quiz already exists!", "data": JSON.parse(data.Body.toString()) });	
 		}
 	});
+	
 });
 
 // Accept POST requests to add or edit quizzes
@@ -46,11 +53,11 @@ app.post("/slug/:slug", function(request, response){
 		Key: "quizzes/data/" + request.params.slug + ".json",
 		Body: request.body.json,
 		ACL: "public-read",
-	}, function(resp){
-		console.log(resp);
+	}, function(err, data){
+		if( err )
+			response.status(500).json({"status": "Error: " + err });
+		else
+			response.status(201).json({"status": "Quiz updated" });
 	});
-	
-	
-	
 
 });

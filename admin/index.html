@@ -21,12 +21,12 @@
 		<div class = "section">
 			<h1 class = "center">What's the slug for this quiz?</h1>
 			<div class = "inputBlock center">
-				<input type="text" ng-model="slug" class="simple" />
+				<input type="text" ng-model="slug" class="simple center" />
 				<span class="btn" ng-class="{disabled: !slug}" ng-click="handleSlug()" >Go</span>
 			</div>
 		</div>
 		
-		<div class = "section" ng-show="data">
+		<div class = "section" ng-show="data" style="background-color: #C8DCEB;">
 			<h2 class = "center">OK, let's take care of the overall stuff...</h2>
 			<div class = "inputCollection shaded">
 				
@@ -62,7 +62,7 @@
 			</div>
 		</div>
 		
-		<div class = "preview section" ng-show = "data && data.questions.length != 0">
+		<div class = "preview section" ng-show = "data && data.questions.length != 0" style="background-color: #FCEA94;">
 
 			<h2 class = "center">Here are the questions you have so far. (Click a title to edit.)</h2>
 
@@ -78,7 +78,7 @@
 		</div>
 		
 		
-		<div class = "section" ng-show="data">
+		<div class = "section" ng-show="data" style="background-color: #9DBFB9;">
 			<h2 class="center">And let's add some questions!</h2>
 			
 			<div ng-include = "'insertQuestion.html'"></div>
@@ -86,7 +86,24 @@
 		
 		<div class = "section" ng-show="data">
 			<h2 class = "center">All done? Save the quiz when you're ready.</h2>
-			<div class="btn big" ng-click="submitQuiz()">Save</span>
+			<div class="btn big" ng-click="submitQuiz()">Save</div>
+			
+			<div id = "success" ng-show="success">Successfully saved!</div>
+			<div id = "error" ng-show="error">{{errorMessage}}</div>
+			
+			<div class="embed">
+				<div class="inputBlock">	
+					<label>Direct link</label>
+					<input type="text" value="{{ host + '/quiz/?id=' + slug}}" />
+				</div>
+				
+				<div class="inputBlock">	
+					<label>Nstein embed code</label>
+					<input type="text" value="<script src='https://s3-us-west-2.amazonaws.com/nationaljournal/countdown/pym.js'></script><p id='pym' class = '{{ host + '/quiz/?id=' + slug}}'></p><script src='{{ host + '/embed'}}'></script>" />
+				</div>
+				
+			</div>
+		
 		</div>
 		
 		
