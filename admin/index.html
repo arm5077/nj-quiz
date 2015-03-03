@@ -2,9 +2,14 @@
 <html ng-app = "quizAdminApp">
 
 <head>
-
+	
+	<title>Quizbuilder | Making news quizes easy</title>
+	
 	<!-- Angular.js -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+
+	<!-- FontAwesome -->
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
 	<!-- Homegrown stylesheets -->
 	<link rel="stylesheet" href="styles.css" />
@@ -16,8 +21,17 @@
 
 <body ng-controller="quizAdminController">
 	
-	<div class = "container">
+	<div class = "header">
+		<div class = "social">
+			<a href="https://github.com/arm5077/nj-quiz" target="_blank"><i class="fa fa-github social"></i></a>
+		</div>
 		
+		<h4>this is <strong>nj-quiz</strong></h4>
+		
+		
+	</div>
+	
+	<div class = "container">
 		<div class = "section">
 			<h1 class = "center">What's the slug for this quiz?</h1>
 			<div class = "inputBlock center">
