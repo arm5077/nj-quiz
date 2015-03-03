@@ -38,6 +38,13 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 		
 	}
 	
+	$scope.deleteQuestion = function(question){
+		index = $scope.data.questions.map( function(q){ return q }).indexOf(question);
+		$scope.data.questions.splice( index, 1 );
+		
+		console.log(index);
+	}
+	
 	$scope.emptyObject = function(object){
 		for(var p in object)
 		    if(object.hasOwnProperty(p))
@@ -50,12 +57,12 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 				if( data.status == "No quiz found!") {
 					console.log("No quiz data -- initializing defaults");
 					$scope.data = {
-						"title": "How well do you know the cats of the National Journal newsroom?",
-					    "text": "So many cats to choose from! Such hard decisions. Take your best shot at matching cats to their owners. Meow! (Also, there's a random Billy Joel song at the end.)",
-						"bronzeResponse": "So you don't know cats very well. Big deal!",
-						"silverResponse": "You know your Billy Joel!",
+						"title": "",
+					    "text": "",
+						"bronzeResponse": "You'll do better next time!",
+						"silverResponse": "Not too shabby!",
 						"goldResponse": "I'm so so so so proud of you.",
-						"url": "http://www.aol.com",
+						"url": "http://www.national.journal.com/...",
 					    "questions": []
 					};
 				} else {

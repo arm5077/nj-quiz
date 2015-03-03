@@ -56,7 +56,7 @@
 				</div>
 				
 				<div class="inputBlock">				
-					<label>Nstein story URL (yes, you gotta make this first!)</label>
+					<label>Story URL (yes, the eventual story URL! Get this from nstein)</label>
 					<input type="text" ng-model="data.url" />
 				</div>
 			</div>
@@ -86,6 +86,7 @@
 			<h2 class = "center">Here are the questions you have so far. (Click a title to edit.)</h2>
 
 			<div class = "accordian" ng-repeat="question in data.questions" ng-class="{expanded: question.expanded }">
+				<i class="fa fa-trash-o" ng-click="deleteQuestion(question)"></i>
 				<h3 ng-click="question.expanded = !question.expanded">{{question.title}} <span class="note">{{question.expanded ? "Collapse" : "Expand"}}</span></h3>
 				<div class = "inputCollection shaded">
 					<div ng-include = "'questionBlock.html'"></div>

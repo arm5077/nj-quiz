@@ -234,12 +234,27 @@ label {
 	background-color: #ddd;
 	padding: 10px;
 	margin:0px auto 20px;
+	position:relative;
 }
 
 	.accordian.expanded {
 		height:auto;
 	}
 	
+	.accordian .fa-trash-o {
+		position: absolute;
+		right: 7px;
+		top: 10px;
+		font-size: 18pt;
+		opacity: .3;
+		
+	}
+		
+		.accordian .fa-trash-o:hover {
+			opacity: .9;
+			cursor: pointer;
+		}
+		
 	.accordian h3:hover {
 		font-weight:600;
 		cursor:pointer;
