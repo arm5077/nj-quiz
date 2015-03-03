@@ -9,10 +9,11 @@ $(window).resize(resize);
 setInterval(resize, 1000);
 
 function resize(){
-	if( $(window).width() > 750 ){
+	if( $(window).width() > 0 ){
 		$("#pym").css({
 			"width": "90%",
-			"margin": "auto"
+			"margin-left": "auto",
+			"margin-right": "auto"
 		});
 	}
 	else {
