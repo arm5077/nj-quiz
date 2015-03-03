@@ -47,7 +47,7 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 				} else {
 					console.log("Pull data from existing quiz!");
 					$scope.data = data.data;
-					console.log(data);
+					$scope.data.fullscreen = false;
 				}
 				
 			})
@@ -66,6 +66,7 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 			.success(function(data, status, headers, config){
 				if( status == 201 ){
 					$scope.success = true;
+					$scope.showEmbed = true;
 					setTimeout(function(){
 						$scope.$apply(function(){
 							$scope.success = false;

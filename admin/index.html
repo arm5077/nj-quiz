@@ -91,7 +91,7 @@
 			<div id = "success" ng-show="success">Successfully saved!</div>
 			<div id = "error" ng-show="error">{{errorMessage}}</div>
 			
-			<div class="embed">
+			<div class="embed inputCollection dashed" ng-show = "showEmbed">
 				<div class="inputBlock">	
 					<label>Direct link</label>
 					<input type="text" value="{{ host + '/quiz/?id=' + slug}}" />

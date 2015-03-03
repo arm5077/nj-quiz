@@ -92,8 +92,7 @@ input.simple {
 		margin-bottom:0;
 	}
 	
-.inputCollection.shaded {
-	background-color: #efefef;
+.inputCollection {
 	padding: 20px;
 	width:40%;
 	margin:auto;
@@ -101,19 +100,34 @@ input.simple {
 	min-width: 500px;
 }
 	
-	.inputCollection.shaded label {
+	.inputCollection.shaded {
+		background-color: #efefef;
+	}
+	
+	.inputCollection label {
 		color:#777;
 		font-size:12pt;
 		font-weight:600;
 	}
 
-	.inputCollection.shaded input[type='text']{
+	.inputCollection input[type='text']{
 		border: 0;
-		background-color: #ddd;
 		padding: 5px;
 		font-size: 16pt;
 		width:98%;
 	}
+		.inputCollection.shaded input[type='text']{
+			background-color: #ddd;
+		}
+		
+			.inputCollection.shaded .newAnswerBlock input[type='text']{
+				background-color: #ccc;
+			}
+		
+		.inputCollection.dashed input[type='text']{
+			border:1px dashed #999;
+			margin-top:3px;
+		}
 
 label {
 	display:block;
@@ -160,6 +174,7 @@ label {
 	margin: 10px 0px;
 	border-radius:10px;
 	padding:20px 10px;
+	background-color:#ddd;
 }
 
 .accordian {
@@ -207,3 +222,8 @@ label {
 	#error {
 		background-color: darkred;
 	}
+	
+.embed {
+	border: 1px solid #999;
+	margin-top: 20px;
+}
