@@ -118,12 +118,12 @@
 			<div class="embed inputCollection dashed" ng-show = "showEmbed">
 				<div class="inputBlock">	
 					<label>Direct link</label>
-					<input type="text" value="{{ host + '/quiz/?id=' + slug}}" />
+					<input type="text" value="http://{{ host + '/quiz/?id=' + slug}}" />
 				</div>
 				
 				<div class="inputBlock">	
 					<label>Nstein embed code</label>
-					<input type="text" value="<script src='https://s3-us-west-2.amazonaws.com/nationaljournal/countdown/pym.js'></script><p id='pym' class = '{{ host + '/quiz/?id=' + slug}}'></p><script src='{{ host + '/embed'}}'></script>" />
+					<input type="text" value="<script src='https://s3-us-west-2.amazonaws.com/nationaljournal/countdown/pym.js'></script><p id='pym' class = 'http://{{ host + '/quiz/?id=' + slug}}'></p><script src='{{ host + '/embed'}}'></script>" />
 				</div>
 				
 			</div>
