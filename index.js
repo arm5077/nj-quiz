@@ -28,6 +28,9 @@ app.use("/data", express.static(__dirname + '/data'));
 // Set up static page (embed library)
 app.use("/embed", express.static(__dirname + '/public/embed.js'));
 
+// Set up static page (embed-full library)
+app.use("/embed-full", express.static(__dirname + '/public/embed-full.js'));
+
 // Accept GET request for quiz slugs and return data
 app.get("/slug/:slug", function(request, response){
 	// Try to read file. If it's not there, create it.
