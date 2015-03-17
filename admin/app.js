@@ -66,11 +66,14 @@ app.controller("quizAdminController", ["$scope", "$http", "$sce", function($scop
 					    "questions": []
 					};
 				} else {
+					
+					// For right now, set all quizzes to NOT fullscreen.
+					data.data.fullscreen = false;
+					
 					console.log("Pull data from existing quiz!");
 					$scope.data = data.data;
 					
-					// For right now, set all quizzes to NOT fullscreen.
-					$scope.data.fullscreen = false;
+					
 				}
 				
 			})
