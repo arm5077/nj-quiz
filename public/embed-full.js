@@ -11,8 +11,8 @@ setInterval(resize, 1000);
 function resize(){
 	if( $(window).width() > 1120 ){
 		$("#pym").css({
-			"width": "115%",
-			"margin-left": "-7%"
+			"width": "180%",
+			"margin-left": "-40%"
 		});
 	}
 	else {
