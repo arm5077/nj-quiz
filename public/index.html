@@ -45,7 +45,7 @@
 				<div class="embed" ng-bind-html="renderHTML(question.embeddedContent)"></div>
 			
 				<ul class = "answers"  ng-class="{answered: question.answered}">
-					<li ng-repeat="answer in question.answers" ng-class="{image: answer.img != null, correct: question.answered && answer.correct, incorrect: question.answered && !answer.correct, selected: question.answered && answer.picked }" ng-click="evaluateAnswer(answer, question)">
+					<li ng-repeat="answer in question.answers" ng-class="{image: answer.img != '', correct: question.answered && answer.correct, incorrect: question.answered && !answer.correct, selected: question.answered && answer.picked }" ng-click="evaluateAnswer(answer, question)">
 						<h3>{{answer.title}}</h3>
 						<div image class = "image" ng-style="{'background-image':'url(' + answer.img + ')'}" ng-show="answer.img">
 						<h4 ng-show="answer.text && question.answered">{{ answer.text }}</h4>
