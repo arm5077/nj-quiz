@@ -12,14 +12,13 @@ function resize(){
 	if( $(window).width() > 1120 ){
 		$("#pym").css({
 			"width": "180%",
-			"margin-left": "-40%",
-			"margin-bottom": "50px"
+			"margin-left": "-40%"
 		});
 	}
 	else {
 		$("#pym").css({
-			"width": "90%",
-			"margin": "auto"
+			"width": "",
+			"margin-left": ""
 		});
 	}
 }
